@@ -1,15 +1,16 @@
 import ContactImg from '../../assets/images/contact.svg'
+import { useTranslation } from 'react-i18next'
 export default function Contact () {
+  const [t] = useTranslation('global')
   return (
     <section id="contact" className="pb-16">
       <div className="container">
         <div className='mb-6'>
           <h2 className="text-headingColor font-[700] text-[2.5rem] mb-3 text-center">
-            Puede <span className="text-primaryColor">contactarme</span>
+            {t('contact.h2-text')} <span className="text-primaryColor">{t('contact.span-text')}</span>
           </h2>
           <p className="lg:w-full lg:text-center text-headingColor font-[500] text-[16px] leading-7">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia,
-            non consectetur fugit obcaecati iure voluptatibus.
+            {t('contact.p-text')}
           </p>
         </div>
         <div className="md:flex justify-between items-center">
@@ -25,21 +26,21 @@ export default function Contact () {
               <div className="mb-5">
                 <input
                   type="text"
-                  placeholder="Ingrese su nombre"
+                  placeholder={t('contact.form.input-name-placenolder')}
                   className="w-full p-3 focus:outline-none rounded-md"
                 />
               </div>
               <div className="mb-5">
                 <input
                   type="email"
-                  placeholder="Ingrese su correo"
+                  placeholder={t('contact.form.input-email-placenolder')}
                   className="w-full p-3 focus:outline-none rounded-md"
                 />
               </div>
               <div className="mb-5">
                 <input
                   type="text"
-                  placeholder="Asunto"
+                  placeholder={t('contact.form.input-subject-placenolder')}
                   className="w-full p-3 focus:outline-none rounded-md"
                 />
               </div>
@@ -48,12 +49,12 @@ export default function Contact () {
                   type="text"
                   rows={3}
                   maxLength={255}
-                  placeholder="Ingrese su mensaje"
+                  placeholder={t('contact.form.input-message-placenolder')}
                   className="w-full p-3 focus:outline-none rounded-md"
                 />
               </div>
               <button className="w-full p-3 focus:outline-none rounded-md bg-smallTextColor text-white hover:bg-headingColor text-center ease-linear duration-150">
-                Enviar Mensaje
+                {t('contact.form.btn-submit')}
               </button>
             </form>
           </div>

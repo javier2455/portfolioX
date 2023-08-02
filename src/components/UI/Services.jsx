@@ -1,20 +1,19 @@
 import { servicesData } from '../../constants'
+import { useTranslation } from 'react-i18next'
 // import { RiComputerLine } from 'react-icons/ri'
 // import { RiComputerLine, RiServerLine, RiImageLine } from 'react-icons/ri'
 
 export default function Services () {
+  const [t] = useTranslation('global')
   return (
     <section className="" id="services">
       <div className="container">
         <div className="text-center">
           <h2 className="text-headingColor font-[800] text-4xl mb-5">
-            ¿Comó puedo <span className="text-primaryColor">ayudarte</span>?
+            {t('services.h2-text')} <span className="text-primaryColor">{t('services.p-text')}</span>?
           </h2>
           <p className="lg:max-w-[600px] lg:mx-auto text-headingColor font-[500] text-[16px] leading-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            totam ratione, blanditiis soluta iure dolore eligendi ullam id
-            deserunt minima iusto ab, assumenda voluptatem deleniti, accusamus
-            nam vero exercitationem temporibus.
+            {t('services.description')}
           </p>
         </div>
 
@@ -24,7 +23,7 @@ export default function Services () {
               {/* vertical line running through the middle */}
               <div className="hidden absolute w-1 sm:block bg-indigo-300 h-full left-1/2 transform -translate-x-1/2"></div>
               {/* left card */}
-              {servicesData.map((serv, index) => (
+              {servicesData().map((serv, index) => (
                 <div key={serv.id} className="mt-6 sm:mt-0 sm:mb-12">
                   <div className="flex items-center flex-col sm:flex-row">
                     {/* justify-start - justify-end */}

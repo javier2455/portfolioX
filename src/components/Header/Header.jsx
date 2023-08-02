@@ -1,10 +1,21 @@
-import { useRef } from 'react'
-import { RiSendPlaneFill, RiMenuFill } from 'react-icons/ri'
+import { useRef, useState } from 'react'
+import { RiArrowDownLine, RiMenuFill, RiTranslate2 } from 'react-icons/ri'
+import { useTranslation } from 'react-i18next'
+import DropdownBtn from '../per_comp/DropdownBtn'
 
 export default function Header () {
   const menuRef = useRef(null)
+  const [translateMenu, setTranslateMenu] = useState('hidden')
+  const [t, i18n] = useTranslation('global')
 
   const toogleMenu = () => menuRef.current.classList.toggle('show_menu')
+  const toogleTranslateMenu = () => {
+    if (translateMenu === 'hidden') {
+      setTranslateMenu('block')
+    } else {
+      setTranslateMenu('hidden')
+    }
+  }
   /* Mas adelante hacer la barra de navegacion fija */
   return (
     <header className="w-full h-[80px] leading-[80px] flex items-center">
@@ -21,10 +32,10 @@ export default function Header () {
 
             <div className="leading-[20px]">
               <h2 className="text-xl text-smallTextColor font-[700]">
-                Portfolio
+                {t('header.h2-text')}
               </h2>
               <p className="text-smallTextColor text-[14px] font-[500]">
-                personal
+                {t('header.p-text')}
               </p>
             </div>
           </div>
@@ -34,22 +45,22 @@ export default function Header () {
             <ul className="flex items-center gap-10">
               <li>
                 <a className="text-smallTextColor font-[600]" href="#about">
-                  Acerca de
+                  {t('header.navigation1')}
                 </a>
               </li>
               <li>
                 <a className="text-smallTextColor font-[600]" href="#services">
-                  Servicios
+                  {t('header.navigation2')}
                 </a>
               </li>
               <li>
                 <a className="text-smallTextColor font-[600]" href="#portfolio">
-                  Trabajos
+                  {t('header.navigation3')}
                 </a>
               </li>
               <li>
                 <a className="text-smallTextColor font-[600]" href="#contact">
-                  Contacto
+                  {t('header.navigation4')}
                 </a>
               </li>
             </ul>
@@ -57,12 +68,20 @@ export default function Header () {
           {/* menu end */}
           {/* menu right */}
           <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 text-smallTextColor font-[600] border border-solid border-smallTextColor py-2 px-4 rounded-lg max-h-[40px] hover:bg-smallTextColor hover:text-white hover:font-[500] ease-in duration-200">
-              <RiSendPlaneFill />
-              Contactame
+            <button
+              onClick={toogleTranslateMenu}
+              className="flex items-center gap-2 text-smallTextColor font-[600] border border-solid border-smallTextColor py-2 px-4 rounded-lg max-h-[40px] hover:bg-smallTextColor hover:text-white hover:font-[500] ease-in duration-200"
+            >
+              <RiTranslate2 />
+              <RiArrowDownLine />
             </button>
 
-            <span onClick={toogleMenu} className="text-2xl text-smallTextColor cursor-pointer md:hidden">
+            <DropdownBtn display={translateMenu} translateFn={i18n} t={t}/>
+
+            <span
+              onClick={toogleMenu}
+              className="text-2xl text-smallTextColor cursor-pointer md:hidden"
+            >
               <RiMenuFill />
             </span>
           </div>

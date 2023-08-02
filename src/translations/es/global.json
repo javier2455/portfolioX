@@ -1,0 +1,79 @@
+{
+    "header": {
+        "h2-text": "Portfolio",
+        "p-text": "personal",
+        "navigation1": "Acerca de",
+        "navigation2": "Servicios",
+        "navigation3": "Trabajos",
+        "navigation4": "Contacto",
+        "btn-translateEs": "Español",
+        "btn-translateEn": "Inglés"
+    },
+    "hero": {
+        "h1-text": "Soy Javier Aleaga García",
+        "p-text": "Desarrollador de Software",
+        "download-btn": "Descargar CV",
+        "works-btn": "Ver trabajos",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facilis voluptatum suscipit tempora quos, placeat architecto iure! Facere, porro? Eveniet?",
+        "p-technologies": "Tecnologías",
+        "h4-experienceYears": "Años de experiencia",
+        "h4-projectsCompleted": "Proyectos completados"
+    },
+    "services": {
+        "h2-text": "¿Comó puedo",
+        "p-text": "ayudarte",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus totam ratione blanditiis soluta iure dolore eligendi ullam id deserunt minima iusto ab, assumenda voluptatem deleniti, accusamus nam vero exercitationem temporibus.",
+        "card-frontend": {
+            "title": "Desarrollador Front-End",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus totam ratione blanditiis soluta iure dolore eligendi ullam id deserunt minima iusto ab, assumenda voluptatem deleniti, accusamus nam vero exercitationem temporibus."
+        },
+        "card-backend": {
+            "title": "Desarrollador Back-End",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus totam ratione blanditiis soluta iure dolore eligendi ullam id deserunt minima iusto ab, assumenda voluptatem deleniti, accusamus nam vero exercitationem temporibus."
+        },
+        "card-design": {
+            "title": "Diseñador UI/UX",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus totam ratione blanditiis soluta iure dolore eligendi ullam id deserunt minima iusto ab, assumenda voluptatem deleniti, accusamus nam vero exercitationem temporibus."
+        }
+    },
+    "works": {
+        "h3-text": "Mis",
+        "span-text": "trabajos",
+        "is-development-span": "En desarrollo",
+        "technologies": "Tecnologías",
+        "btn-demo": "Ver Demo",
+        "btn-github": "Ver Repositorio",
+        "card-easy2Art": {
+            "title": "Easy2Art",
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facilis voluptatum suscipit tempora quos, placeat architecto iure! Facere, porro? Eveniet?"
+        },
+        "card-portfolioX": {
+            "title": "PortfolioX",
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facilis voluptatum suscipit tempora quos, placeat architecto iure! Facere, porro? Eveniet?"
+        },
+        "card-dashboard": {
+            "title": "DashBoard UI/UX",
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat facilis voluptatum suscipit tempora quos, placeat architecto iure! Facere, porro? Eveniet?"
+        }
+    },
+    "contact": {
+        "h2-text": "Puede",
+        "span-text": "contactarme",
+        "p-text": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, non consectetur fugit obcaecati iure voluptatibus.",
+        "form": {
+            "input-name-placenolder": "Ingrese su nombre",
+            "input-email-placenolder": "Ingrese su correo",
+            "input-subject-placenolder": "Asunto",
+            "input-message-placenolder": "Ingrese su mensaje",
+            "btn-submit": "Enviar Mensaje"
+        }
+    },
+    "footer": {
+        "h2-text": "¿Te gustaría hacer tus proyectos realidad?",
+        "p-text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor excepturi fuga nesciunt ducimus esse distinctio maiores laudantium, vitae tempora eaque!",
+        "btn-contact": "Contáctame",
+        "develop-name": "Javier Aleaga García",
+        "develop-work": "Portfolio personal",
+        "copyright-text": "Copyright 2023 desarrollado por Javier Aleaga García - Todos los derechos reservados"
+    }
+}

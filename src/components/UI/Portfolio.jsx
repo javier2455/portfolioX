@@ -1,14 +1,16 @@
 import { portfolioData } from '../../constants'
 import { RiGithubFill, RiArrowRightCircleLine } from 'react-icons/ri'
+import { useTranslation } from 'react-i18next'
 
 export default function Portfolio () {
+  const [t] = useTranslation('global')
   return (
     <section id="portfolio">
       <div className="container">
         <div className="flex items-center justify-between flex-wrap">
           <div className="mb-7 sm:mb-0">
             <h3 className="text-headingColor text-4xl font-[700]">
-              Mis <span className="text-primaryColor">trabajos</span>.
+              {t('works.h3-text')} <span className="text-primaryColor">{t('works.span-text')}</span>.
             </h3>
           </div>
           {/* <div className="flex gap-3">
@@ -24,7 +26,7 @@ export default function Portfolio () {
           </div> */}
         </div>
         <div className="flex items-center justify-center gap-4 flex-wrap mt-12">
-          {portfolioData?.map((portfolio, index) => (
+          {portfolioData()?.map((portfolio, index) => (
             <div
               key={portfolio.id}
               data-aos="fade-zoom-in"
@@ -46,7 +48,7 @@ export default function Portfolio () {
                   </h2>
                   {portfolio.development && (
                     <span className="bg-gray-200 py-1 px-2 rounded-md text-md leading-0 font-semibold">
-                      En desarrollo
+                      {t('works.is-development-span')}
                     </span>
                   )}
                 </div>
@@ -54,7 +56,7 @@ export default function Portfolio () {
                 {/* technologies */}
                 <div className="mt-5 flex items-center gap-3 flex-wrap">
                   <h4 className="text-headingColor text-lg text-[700]">
-                    Tecnologias:
+                    {t('works.technologies')}:
                   </h4>
                   {portfolio.technologies.map((item, index) => (
                     <span
@@ -76,7 +78,7 @@ export default function Portfolio () {
                         : ''
                     }`}
                   >
-                    Ver Demo
+                    {t('works.btn-demo')}
                     <RiArrowRightCircleLine className="text-xl" />
                   </a>
                   <a
@@ -89,7 +91,7 @@ export default function Portfolio () {
                         : ''
                     }`}
                   >
-                    Ver Repositorio
+                    {t('works.btn-github')}
                     <RiGithubFill className="text-xl" />
                   </a>
                 </div>

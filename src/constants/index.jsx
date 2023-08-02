@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 import {
   RiGithubLine,
   RiYoutubeLine,
@@ -31,35 +33,35 @@ import work1Modal from '../assets/images/work_1_modal.png'
 import work2Modal from '../assets/images/work_2_modal.png'
 import work3Modal from '../assets/images/work_3_modal.png'
 
-export const servicesData = [
-  {
-    id: '01',
-    title: 'Desarrollador Front-End',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos minus pariatur nam unde officia? Amet maxime explicabo voluptatem cupiditate tenetur?',
-    icon: <RiComputerLine />,
-    learning: false,
-    cardLeft: true
-  },
-  {
-    id: '02',
-    title: 'Desarrollador Back-End',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos minus pariatur nam unde officia? Amet maxime explicabo voluptatem cupiditate tenetur?',
-    icon: <RiServerLine />,
-    learning: false,
-    cardLeft: false
-  },
-  {
-    id: '03',
-    title: 'Diseñador UI/UX',
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos minus pariatur nam unde officia? Amet maxime explicabo voluptatem cupiditate tenetur?',
-    icon: <RiImageLine />,
-    learning: false,
-    cardLeft: true
-  }
-]
+export const servicesData = () => {
+  const [t] = useTranslation('global')
+  return [
+    {
+      id: '01',
+      title: t('services.card-frontend.title'),
+      description: t('services.card-frontend.description'),
+      icon: <RiComputerLine />,
+      learning: false,
+      cardLeft: true
+    },
+    {
+      id: '02',
+      title: t('services.card-backend.title'),
+      description: t('services.card-backend.description'),
+      icon: <RiServerLine />,
+      learning: false,
+      cardLeft: false
+    },
+    {
+      id: '03',
+      title: t('services.card-design.title'),
+      description: t('services.card-design.description'),
+      icon: <RiImageLine />,
+      learning: false,
+      cardLeft: true
+    }
+  ]
+}
 
 export const technologiesFrontend = [
   <SiHtml5 key={'SiHtml5'} />,
@@ -101,44 +103,51 @@ export const socialNetworks = [
   }
 ]
 
-export const portfolioData = [
-  {
-    id: '01',
-    img: work1,
-    imgShort: work1Modal,
-    category: '',
-    title: 'Easy2Art',
-    description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit quae, similique exercitationem quasi, repellat facilis, natus laudantium assumenda labore dolor odio ducimus repellendus. At, laborum?',
-    technologies: ['React', 'Tailwind CSS', 'Vite', 'EmailJS'],
-    githubUrl: 'https://github.com/javier2455/easy2art',
-    websiteUrl: 'https://javier2455.github.io/easy2art/',
-    development: false
-  },
-  {
-    id: '02',
-    img: work2,
-    imgShort: work2Modal,
-    category: '',
-    title: 'PortfolioX',
-    description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit quae, similique exercitationem quasi, repellat facilis, natus laudantium assumenda labore dolor odio ducimus repellendus. At, laborum?',
-    technologies: ['React', 'Tailwind CSS', 'Vite', 'EmailJS'],
-    githubUrl: '',
-    websiteUrl: '',
-    development: true
-  },
-  {
-    id: '03',
-    img: work3,
-    imgShort: work3Modal,
-    category: '',
-    title: 'DashBoard UI/UX',
-    description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit quae, similique exercitationem quasi, repellat facilis, natus laudantium assumenda labore dolor odio ducimus repellendus. At, laborum?',
-    technologies: ['NextJS', 'Tailwind CSS', 'NodeJS', 'Express', 'PostgresSql', 'Figma'],
-    githubUrl: '',
-    websiteUrl: '',
-    development: true
-  }
-]
+export const portfolioData = () => {
+  const [t] = useTranslation('global')
+  return [
+    {
+      id: '01',
+      img: work1,
+      imgShort: work1Modal,
+      category: '',
+      title: t('works.card-easy2Art.title'),
+      description: t('works.card-easy2Art.description'),
+      technologies: ['React', 'Tailwind CSS', 'Vite', 'EmailJS'],
+      githubUrl: 'https://github.com/javier2455/easy2art',
+      websiteUrl: 'https://javier2455.github.io/easy2art/',
+      development: false
+    },
+    {
+      id: '02',
+      img: work2,
+      imgShort: work2Modal,
+      category: '',
+      title: t('works.card-portfolioX.title'),
+      description: t('works.card-portfolioX.description'),
+      technologies: ['React', 'Tailwind CSS', 'Vite', 'EmailJS'],
+      githubUrl: '',
+      websiteUrl: '',
+      development: true
+    },
+    {
+      id: '03',
+      img: work3,
+      imgShort: work3Modal,
+      category: '',
+      title: t('works.card-dashboard.title'),
+      description: t('works.card-dashboard.description'),
+      technologies: [
+        'NextJS',
+        'Tailwind CSS',
+        'NodeJS',
+        'Express',
+        'PostgresSql',
+        'Figma'
+      ],
+      githubUrl: '',
+      websiteUrl: '',
+      development: true
+    }
+  ]
+}
