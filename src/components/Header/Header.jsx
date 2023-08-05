@@ -1,14 +1,19 @@
-import { useRef, useState } from 'react'
-import { RiArrowDownLine, RiMenuFill, RiTranslate2 } from 'react-icons/ri'
+import { useState } from 'react'
+import {
+  RiArrowDownLine,
+  RiMenuFill,
+  RiCloseFill,
+  RiTranslate2
+} from 'react-icons/ri'
 import { useTranslation } from 'react-i18next'
 import DropdownBtn from '../per_comp/DropdownBtn'
 
 export default function Header () {
-  const menuRef = useRef(null)
+  const [openNavigationMenu, setOpenNavigationMenu] = useState(false)
   const [translateMenu, setTranslateMenu] = useState('hidden')
   const [t, i18n] = useTranslation('global')
 
-  const toogleMenu = () => menuRef.current.classList.toggle('show_menu')
+  const handleNavigationMenu = () => setOpenNavigationMenu(!openNavigationMenu)
   const toogleTranslateMenu = () => {
     if (translateMenu === 'hidden') {
       setTranslateMenu('block')
@@ -41,30 +46,32 @@ export default function Header () {
           </div>
           {/* logo end */}
           {/* menu start */}
-          <div className="menu" ref={menuRef} onClick={toogleMenu}>
-            <ul className="flex items-center gap-10">
-              <li>
-                <a className="text-smallTextColor font-[600]" href="#about">
-                  {t('header.navigation1')}
-                </a>
-              </li>
-              <li>
-                <a className="text-smallTextColor font-[600]" href="#services">
-                  {t('header.navigation2')}
-                </a>
-              </li>
-              <li>
-                <a className="text-smallTextColor font-[600]" href="#portfolio">
-                  {t('header.navigation3')}
-                </a>
-              </li>
-              <li>
-                <a className="text-smallTextColor font-[600]" href="#contact">
-                  {t('header.navigation4')}
-                </a>
-              </li>
-            </ul>
-          </div>
+          <ul
+            onClick={handleNavigationMenu}
+            className={`shadow-lg sm:flex sm:items-center sm:justify-center sm:gap-10 sm:static absolute bg-white w-full sm:opacity-100 sm:shadow-none
+            ${openNavigationMenu ? 'top-[70px] left-0 z-[1] border border-smallTextColor' : 'opacity-0 top-[70px] left-[-400px]'} transition-all ease-in duration-300`}
+          >
+            <li className="px-3 text-left">
+              <a className="text-smallTextColor font-[600]" href="#about">
+                {t('header.navigation1')}
+              </a>
+            </li>
+            <li className="px-3 text-left">
+              <a className="text-smallTextColor font-[600]" href="#services">
+                {t('header.navigation2')}
+              </a>
+            </li>
+            <li className="px-3 text-left">
+              <a className="text-smallTextColor font-[600]" href="#portfolio">
+                {t('header.navigation3')}
+              </a>
+            </li>
+            <li className="px-3 text-left">
+              <a className="text-smallTextColor font-[600]" href="#contact">
+                {t('header.navigation4')}
+              </a>
+            </li>
+          </ul>
           {/* menu end */}
           {/* menu right */}
           <div className="flex items-center gap-4">
@@ -76,13 +83,14 @@ export default function Header () {
               <RiArrowDownLine />
             </button>
 
-            <DropdownBtn display={translateMenu} translateFn={i18n} t={t}/>
+            <DropdownBtn display={translateMenu} translateFn={i18n} t={t} />
 
             <span
-              onClick={toogleMenu}
+              onClick={handleNavigationMenu}
+              // onClick={toogleMenu}
               className="text-2xl text-smallTextColor cursor-pointer md:hidden"
             >
-              <RiMenuFill />
+              {openNavigationMenu ? <RiCloseFill /> : <RiMenuFill />}
             </span>
           </div>
           {/* menu end */}

@@ -10,6 +10,10 @@ Currently, two official plugins are available:
 
 # Cambios por versiones:
 
+## v1.2
+- En los servicios se corrige el efecto hover que hacia saltar las cartas.
+- Arreglada la navegación para dispositivos con dimensiones sm y md.
+
 ## v1.1
 - Agregado la funcionalidad para cambiar de Idioma (habilitados por ahora Español e Inglés)
 - Se retiro el botón del componente `Header` 'Contactame', para poner el que permite cambiar de idioma.
